@@ -1,9 +1,0 @@
-I"ç(function() {
-  jQuery(function() {
-    return $("#search").autocomplete({
-      source: ["foo", "aaa", "doo"]
-    });
-  });
-
-}).call(this);
-:ET
