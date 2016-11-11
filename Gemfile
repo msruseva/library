@@ -32,10 +32,14 @@ gem 'will_paginate', '~> 3.1.0'
 # Use paperclip for add_attachment
 gem "paperclip", "~> 5.0.0"
 
-# User foundation for front-end
+# Use foundation for front-end
 gem 'foundation-rails'
 
+# User autocomplete for search panel
+gem 'rails4-autocomplete'
+
 gem "jquery-ui-rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
