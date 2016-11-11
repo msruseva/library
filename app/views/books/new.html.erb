@@ -1,0 +1,20 @@
+<% if @book.errors.any? %>
+	<h3> There was a problem saving this book</h3>
+	<ul>
+		<% @book.errors.full_messages.each do |message|  %>
+			<li style="color: red">
+				<%= message %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h2 style="color: #AB6BE0;">Create Book</h2>
+<%= form_for(@book) do |f| %>
+	<%= f.label :name %> <%= f.text_field :name %>
+	<%= f.select :genre, options_for_select(["adventure", "biopgraphy", "comedy", "drama", "horror", "romantic"], :selected => f.object.genre), include_blank: true %>
+	<%= f.label :page_count %><%= f.number_field :page_count, min: 10 %>
+	<%= f.label :image %> <%= f.file_field :image %>
+	
+	<%= f.submit %>
+<% end %>

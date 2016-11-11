@@ -1,0 +1,25 @@
+<%= form_tag url_for(action: 'process_login'), class: 'login-form' do %>
+	<% if flash[:error].present? %>
+		<div>
+			<span style="color: red;"><%= flash[:error] %></span>
+		</div>	
+	<% end %>
+	<h3>Login to your account</h3>
+	<div>
+		<label>Username</label>
+		<div>
+			<%= text_field_tag :username, params[:username],placeholder: 'Username', maxlength: 12%>
+		</div>
+	</div>
+	<div>
+		<label>Password</label>
+		<div>
+			<%= password_field_tag :password, params[:password], placeholder: 'Password'%>
+		</div>
+	</div>
+	 <div>
+		<%= submit_tag 'Logon'%>
+	</div>
+<% end %>
+
+<%= button_to "Create account", new_user_path, method: :get %>

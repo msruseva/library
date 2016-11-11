@@ -1,0 +1,9 @@
+I"‘(function() {
+  jQuery(function() {
+    return $("#search").autocomplete({
+      source: ["foo", "food", "fooooo"]
+    });
+  });
+
+}).call(this);
+:ET

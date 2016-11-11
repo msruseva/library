@@ -1,0 +1,9 @@
+I"€(function() {
+  jQuery(function() {
+    return $("#search").autocomplete({
+      source: "/books"
+    });
+  });
+
+}).call(this);
+:ET

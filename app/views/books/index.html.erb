@@ -1,0 +1,18 @@
+<h2 style="color: #AB6BE0;">Books</h2>
+<h5 style="color: red;"><%= flash[:notice] if flash[:notice] %></h5>
+<!--
+<%= form_tag(books_path, method: :get, remote: true) do %>
+	<%= text_field_tag :search, params[:search], onkeyup: "$(this).parent('form').submit();", placeholder: "Search book" %>
+<% end %>
+-->
+<%= form_tag(books_path, method: :get) do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search book", data: {autocomplete_source: books_path} %>
+<% end %>
+
+<%= button_to "Create", new_book_path, method: :get %>
+
+<div class="books-table">
+	<%= render partial: 'table' %>
+</div>
+
+<%= will_paginate @books %>
