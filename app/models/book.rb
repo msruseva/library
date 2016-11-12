@@ -5,8 +5,8 @@ class Book < ActiveRecord::Base
 		url: "/assets/images/:basename.:extension"
 
 	validates_attachment  :image,
-        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
-        size: { :less_than => 1.megabyte }
+		content_type: { content_type: ["image/jpeg", "image/png"] },
+		size: { :less_than => 1.megabyte }
 
 	validates :name, presence: true, length: { maximum: 50 }
 	validates :genre, presence: true
