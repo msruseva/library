@@ -13,7 +13,7 @@ class AuthController < ApplicationController
       log_in(user)
       redirect_to books_path
     else
-      flash[:error] = 'Invalid username or password.'
+      flash[:error] = 'Invalid username or password'
       redirect_to action: 'login'
     end
   end

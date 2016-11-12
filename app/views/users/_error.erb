@@ -1,8 +1,0 @@
-<% if @user.errors.any? %>
-	<h3> There was a problem while creating user</h3>
-	<ul>
-		<% @user.errors.full_messages.each do |message|  %>
-			<li style="color: red"><%= message %></li>
-		<% end %>
-	</ul>
-<% end %>
