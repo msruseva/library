@@ -1,14 +1,19 @@
 class BooksController < ApplicationController
-
 	before_action :verify_login
 
+	autocomplete :book, :name, :full => true
+
 	def index
-		@books = Book.search(params[:search]).desc
+		@books = Book.all.desc
 		@books = @books.paginate(:page => params[:page], :per_page => 5)
+
+		if params[:search]
+			@books = Book.search(params[:search]).paginate(:page => params[:page], :per_page => 5).desc
+		end
 
 		respond_to do |format|
 			format.html {}
-			/format.js {}/
+			format.js {}
 			format.json { render json: @books }
 		end
 	end
