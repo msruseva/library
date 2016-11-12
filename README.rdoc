@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Extra added gems:
+  -- gem 'foundation'         - front-end
+  -- gem 'will_paginate'      - pagination
+  -- gem 'paperclip'          - attachment file
+  -- gem 'jquery-ui-rails'    - helper for autocomplete
+  -- gem 'rails4-autocomplete'- autocomplete for one of the search panels that are in the project
 
-Things you may want to cover:
+2. Steps to run the project
+  2.1. Open terminal;
+  2.2. Use command 'git clone name_of_the_reository' to clone the code to your computer;
+  2.3. Find the folder where you've cloned the project;
+  2.4. When you're in the same folder run rails server with the command 'rails s';
+  2.5. Open the browser and write localhost:3000;
+  2.6. Create user, if you still don't have it (you can also create user from the terminal);
+  2.7. After successfully login you'll have the opportunity create/delete your book/books from the form that will appear to you;
+  2.8. At the end you can logout.
+  
+3. Specifics
+  - two search panels
+    -- first one doesn't reload the page, while the user is typing it's searching;
+    -- second one is giving suggestions for the name of the book.
+  - flash[:errors] and full error messages
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+4. Things to do
+  - JavaScript validations
+  - rspecs
+  - better front-end
