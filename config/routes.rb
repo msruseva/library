@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get 'logout' => 'auth#logout'
 
   resources :users, only: [ :new, :create, :destroy ]
-  resources :books, except: [ :show, :edit, :update ]
+  resources :books, except: [ :show, :edit, :update ] {
+  	get :autocomplete_book_name, :on => :collection
+  }
+
 end
