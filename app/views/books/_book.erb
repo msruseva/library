@@ -3,9 +3,5 @@
 	<td><%= book.name %></td>
 	<td><%= book.genre%></td>
 	<td><%= book.page_count%></td>
-	<td><%= link_to book.name, book_path(book) %></td>
-	<td>
-		<%= button_to "Destroy", @book, method: :delete, data: { confirm: 'Are you sure?' }, style: "color: red"  %>
-	</td>
-
+	<td><%= button_to "Destroy", book, method: :delete, data: { confirm: 'Are you sure?' }, style: "color: red"  %></td>
 </tr>

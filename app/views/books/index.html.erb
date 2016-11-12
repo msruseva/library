@@ -1,12 +1,15 @@
 <h2 style="color: #AB6BE0;">Books</h2>
 <h5 style="color: red;"><%= flash[:notice] if flash[:notice] %></h5>
-<!--
+
+<!-- Search panel that can search by name/genre/page_count without relouding tha page -->
 <%= form_tag(books_path, method: :get, remote: true) do %>
 	<%= text_field_tag :search, params[:search], onkeyup: "$(this).parent('form').submit();", placeholder: "Search book" %>
 <% end %>
--->
-<%= form_tag(books_path, method: :get) do %>
-	<%= text_field_tag :search, params[:search], placeholder: "Search book", data: {autocomplete_source: books_path} %>
+
+<!-- Search panel that can search by name -->
+<%= form_tag(books_path, method: :get, id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search by name", data: { autocomplete: autocomplete_book_name_books_path } %>
+	<!--<%= submit_tag "Search" %> -->
 <% end %>
 
 <%= button_to "Create", new_book_path, method: :get %>

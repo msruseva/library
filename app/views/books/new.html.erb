@@ -1,15 +1,7 @@
-<% if @book.errors.any? %>
-	<h3> There was a problem saving this book</h3>
-	<ul>
-		<% @book.errors.full_messages.each do |message|  %>
-			<li style="color: red">
-				<%= message %>
-			</li>
-		<% end %>
-	</ul>
-<% end %>
+<%= render partial: 'error' %>
 
 <h2 style="color: #AB6BE0;">Create Book</h2>
+
 <%= form_for(@book) do |f| %>
 	<%= f.label :name %> <%= f.text_field :name %>
 	<%= f.select :genre, options_for_select(["adventure", "biopgraphy", "comedy", "drama", "horror", "romantic"], :selected => f.object.genre), include_blank: true %>

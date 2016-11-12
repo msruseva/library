@@ -1,0 +1,8 @@
+<% if @book.errors.any? %>
+	<span>There was a problem creating this book.</span>
+	<ul>
+		<% @book.errors.full_messages.each do |message|  %>
+			<li style="color: red"><%= message %></li>
+		<% end %>
+	</ul>
+<% end %>
